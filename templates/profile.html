@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile</title>
+</head>
+<body>
+    <h2>User Profile</h2>
+    {% if user %}
+        <p>Username: {{ user.username }}</p>
+        <p>First Name: {{ user.firstname }}</p>
+        <p>Last Name: {{ user.lastname }}</p>
+        <p>Email: {{ user.email }}</p>
+        <p>Address: {{ user.address }}</p>
+    {% else %}
+        <p>User not found.</p>
+    {% endif %}
+
+    <hr>
+    <p><a href="/login">Logout</a></p>
+
+    <!-- Extra Credit: File Upload and Word Count -->
+    <h3>Upload Limerick File</h3>
+    <form method="POST" action="/upload" enctype="multipart/form-data">
+        <input type="file" name="file"><br><br>
+        <input type="submit" value="Upload">
+    </form>
+
+    {% if session.word_count %}
+    <p>Word Count: {{ session.word_count }}</p>
+    <a href="/download">Download Limerick File</a>
+    {% endif %}
+</body>
+</html>
