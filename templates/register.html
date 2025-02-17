@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration</title>
+</head>
+<body>
+    <h2>Registration</h2>
+    <form method="POST" action="/register">
+        Username: <input type="text" name="username" required><br>
+        Password: <input type="password" name="password" required><br>
+        First Name: <input type="text" name="firstname" required><br>
+        Last Name: <input type="text" name="lastname" required><br>
+        Email: <input type="email" name="email" required><br>
+        Address: <textarea name="address" required></textarea><br>
+        <input type="submit" value="Register">
+    </form>
+
+    <hr>
+    <p>Already have an account? <a href="/login">Login</a></p>
+</body>
+</html>
